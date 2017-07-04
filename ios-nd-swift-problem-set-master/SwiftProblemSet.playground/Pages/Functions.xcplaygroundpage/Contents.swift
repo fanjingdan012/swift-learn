@@ -5,12 +5,13 @@
 //: ## Functions 
 //: ### Exercise 14
 //: The function `emojiLove` should take two `String` parameters and use them to print a `String` with  the format "stringParameterOne ❤️ stringParameterTwo".
-func emojiLove(/* add parameters here */) {
-    /* add function implementation here */
+func emojiLove(s1:String, s2:String) {
+	print("\(s1) ❤️ \(s2)")
 }
 
+
 /* Example Function Call
- 
+ emojiLove(s1: "cats", s2: "dogs") // prints "cats ❤️ dogs"
  emojiLove(s1: "cats", s2: "dogs") // prints "cats ❤️ dogs"
  emojiLove(s1: "udacity", s2: "students") // prints "udacity ❤️ students"
  emojiLove(s1: "peanut butter", s2: "jelly") // prints "peanut butter ❤️ jelly"
@@ -20,10 +21,39 @@ func emojiLove(/* add parameters here */) {
 
 //: ### Exercise 15
 //: The function `median` should take three `Int` parameters and return the `Int` value in the middle.
-func median(/* add parameters here */) /* define the return type */ {
-    /* add function implementation here */
+func median(num1:Int,num2:Int,num3:Int) -> Int {
+    var min = num1
+	if min > num2 {
+		min = num2
+	}
+    if min > num3 {
+		min = num3
+	}
+	if min == num1 {
+		if num2 > num3 {
+			return num3
+		}else {
+			return num2
+		}
+	}
+	else if min == num2 {
+		if num1 > num3 {
+			return num3
+		}else {
+			return num1
+		}
+	}
+	else {
+		if num2 > num1 {
+			return num1
+		}else {
+			return num2
+		}
+	}
+	
+    
+	
 }
-
 /* Example Function Call
  
  median(num1: 1, num2: 5, num3: 6) // 5
@@ -46,8 +76,17 @@ func median(/* add parameters here */) /* define the return type */ {
  
  **Note**: It is assumed that the input string is given in English.
  */
-func beginsWithVowel(/* add parameters here */) /* define the return type */ {
+func beginsWithVowel(s:String) -> Bool {
     /* add function implementation here */
+	if(s == ""){
+		return  false
+	}
+	let ss = s.characters[s.startIndex]
+	
+	if ss == "a" || ss == "A" || ss == "e" || ss == "E" || ss == "i" || ss == "I" || ss == "o" || ss == "O" || ss == "u" || ss == "U" {
+		return true
+	}
+	return false
 }
 
 /* Example Function Call
@@ -71,8 +110,13 @@ func beginsWithVowel(/* add parameters here */) /* define the return type */ {
  
  **Hint**: Re-use the `beginsWithVowel` function.
  */
-func funWithWords(/* add parameters here */) /* define the return type */ {
-    /* add function implementation here */
+func funWithWords(s:String) -> String {
+    let beginsWithVowelBool = beginsWithVowel(s:s)
+	if beginsWithVowelBool {
+		return s.uppercased()
+	}else {
+		return s.lowercased()
+	}
 }
 
 /* Example Function Call

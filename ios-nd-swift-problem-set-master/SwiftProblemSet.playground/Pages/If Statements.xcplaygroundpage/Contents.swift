@@ -11,7 +11,14 @@ import Foundation
 2. Declare a bool called `sick` with an initial value of true or false.
 3. Write a statement such that when `sick` is true the function `rest()` is called.
 */
+func rest(){
+	print("Stay in bed")
 
+}
+var sick = true
+if sick {
+	rest()
+}
 /*: 
 ### Exercise 11
 
@@ -19,6 +26,14 @@ import Foundation
 2. Declare two bools called `finishedWork` and `gotTickets` with initial values of true or false.
 3. Write a statement such that when both `finishedWork` and `gotTickets` are true the function `goToConcert()` is called.
  */
+func goToConcert(){
+	print ("That vocalist is incredible!")
+}
+var finishedWork: Bool = true
+var gotTickets: Bool = true
+if finishedWork && gotTickets {
+	goToConcert()
+}
 
 /*:
 ### Exercise 12
@@ -43,7 +58,7 @@ Change the values of the variables and see how the output changes.
 */
 var game = "Slow adventures with Morris the Lorris"
 
-var bugs = 9
+var bugs = 5
 var hasMusic = true
 var numberOfLevels = 7
 
@@ -52,7 +67,15 @@ func release() {
 }
 
 func checkForRelease(bugs: Int, music: Bool, levels: Int) {
-    
+	if (bugs >= 10){
+		print("Please fix bugs")
+	} else if(!music){
+		print("Not have music")
+	} else if(levels <= 5){
+		print("Please increase levels")
+	}else {
+		release()
+	}
 }
 
 checkForRelease(bugs: bugs, music: hasMusic, levels: numberOfLevels)
@@ -78,7 +101,15 @@ var canFinishBike: Bool = true
 var canFinishRun: Bool = true
 
 func checkTrainingStatus(name: String, bike: Bool, run: Bool) {
-    //TODO: Add your if, else-if statement here!
+    if canFinishBike && canFinishRun {
+		print ("\(name) is ready")
+	}else if canFinishBike && !canFinishRun {
+		print("\(name) cannot finish run")
+	}else if !canFinishBike && canFinishRun {
+		print("\(name) cannot finish bike")
+	}else if !canFinishBike && !canFinishRun {
+		print("\(name) cannot finish run and bike")
+	}
 }
 
 checkTrainingStatus(name: name, bike: canFinishBike, run: canFinishRun)

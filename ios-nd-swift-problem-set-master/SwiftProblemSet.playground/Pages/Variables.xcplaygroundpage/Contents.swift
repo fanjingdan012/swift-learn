@@ -20,8 +20,9 @@ var myFirstProgrammingLanguage: String
 //: ### Exercise 2
 //: Make the minimal changes necessary to fix the following compiler errors related to assignment, variables, and constants.
 var favoriteLanguage: String = "Swift"
-gallonsRemainingInTank = "2"
-ageOfSpecimenInWeeks = 32.45
+gallonsRemainingInTank = 32.45
+ageOfSpecimenInWeeks = 2
+myFirstProgrammingLanguage = "Swift"
 let bestProgrammingLanguage: String = myFirstProgrammingLanguage
 
 //: ### Exercise 3
@@ -40,7 +41,7 @@ let stringToReverse1 = String(arrayOfCharacters)
 - a `String` value representing what a user types into the status update area.
 */
 var hungerLevel : Int
-var scoreRequiredForWin ： Int
+var scoreRequiredForWin: Int
 var studentBirthday:String
 var status :String
 /*:
